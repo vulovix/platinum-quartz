@@ -1,0 +1,15 @@
+{
+  "cssTheme": "Baseline",
+  "enabledCssSnippets": [
+    "style"
+  ],
+  "baseFontSize": 14,
+  "showViewHeader": false,
+  "translucency": true,
+  "interfaceFontFamily": "",
+  "accentColor": "#00ffff",
+  "nativeMenus": true,
+  "showRibbon": false,
+  "baseFontSizeAction": true,
+  "textFontFamily": ""
+}

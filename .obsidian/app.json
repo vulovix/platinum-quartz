@@ -1,0 +1,11 @@
+{
+  "promptDelete": true,
+  "showInlineTitle": false,
+  "attachmentFolderPath": "Uploads",
+  "showUnsupportedFiles": false,
+  "alwaysUpdateLinks": true,
+  "propertiesInDocument": "visible",
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "spellcheck": false
+}

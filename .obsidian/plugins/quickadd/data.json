@@ -1,0 +1,872 @@
+{
+  "choices": [
+    {
+      "id": "db397df0-461e-46e1-a915-73deae7218da",
+      "name": "Journal Entry",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Journal Entry",
+        "id": "980398e6-bbd2-454e-98f3-5d51fbcd74a0",
+        "commands": [
+          {
+            "name": "getJournalPath",
+            "type": "UserScript",
+            "id": "acfb406d-c02c-47af-bb7e-42520274dae5",
+            "path": "System/Scripts/getJournalPath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Journal Note In YYYY Folder",
+            "type": "NestedChoice",
+            "id": "e153567d-15b1-4320-aed8-60f4ac3977e1",
+            "choice": {
+              "id": "5ab5a6a5-5246-4bfe-b34d-b324a4075de9",
+              "name": "Create Journal Note In YYYY Folder",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Journal Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:journalFileName}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:journalPath}}"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Nothing",
+              "setFileExistsBehavior": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "588ea24a-de3c-4645-b4e0-05e264483816",
+      "name": "Journal Log",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "Journal/{{DATE:YYYY}}/{{DATE:YYYY-MM-DD}}",
+      "captureToActiveFile": false,
+      "activeFileWritePosition": "cursor",
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": true,
+        "template": "System/Templates/Journal Template.md"
+      },
+      "format": {
+        "enabled": true,
+        "format": "- {{DATE:HH:mm:ss}} — {{value}}\n"
+      },
+      "insertAfter": {
+        "enabled": true,
+        "after": "#### Journal Log",
+        "insertAtEnd": true,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": false,
+      "task": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "templater": {
+        "afterCapture": "none"
+      }
+    },
+    {
+      "id": "5beb5b4f-db0c-4d31-a428-d979e06e23ca",
+      "name": "Space",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space",
+        "id": "dd1c0649-6617-4fd4-8f79-974f4d16e536",
+        "commands": [
+          {
+            "name": "Create a Folder under Spaces",
+            "type": "NestedChoice",
+            "id": "6a64d95f-89ca-411b-9e99-59e1f6ce453c",
+            "choice": {
+              "id": "cb66417e-83c1-4988-adb2-dae6470bf6ae",
+              "name": "Create a Folder under Spaces",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Space Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{value}}/{{value}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["Spaces"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "a0e5f817-d094-48c0-911c-df001dd35d67",
+      "name": "Space Note",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space Note",
+        "id": "d68a245e-072d-4861-abda-b5150bc2c0f7",
+        "commands": [
+          {
+            "name": "getSpacePath",
+            "type": "UserScript",
+            "id": "6497aee4-ed27-489b-a872-68ceab49c150",
+            "path": "System/Scripts/getSpacePath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Space Note",
+            "type": "NestedChoice",
+            "id": "4982b459-920b-46f1-9357-2d9d5bb5465d",
+            "choice": {
+              "id": "ac2781f5-b2fe-4c4e-ab46-29f9080663c4",
+              "name": "Create Space Note",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Note Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{DATE:YYYY-MM-DD-HH-mm}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:spacePath}}/Notes"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ba93c4bb-e503-4093-8ca4-80699f85aec6",
+      "name": "Project",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Project",
+        "id": "55d90c30-eb74-4144-99ac-6923e2d0c871",
+        "commands": [
+          {
+            "name": "Create a Folder under Projects",
+            "type": "NestedChoice",
+            "id": "3eb89b64-c788-4137-8b8d-31c18ff76256",
+            "choice": {
+              "id": "ac2781f5-b2fe-4c4e-ab46-29f9080663c4",
+              "name": "Create a Folder under Projects",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Project Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{value}}/{{value}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["Projects"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj-note-macro-001",
+      "name": "Project Note",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Project Note",
+        "id": "proj-note-macro-id",
+        "commands": [
+          {
+            "name": "getProjectPath",
+            "type": "UserScript",
+            "id": "proj-note-script-001",
+            "path": "System/Scripts/getProjectPath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Project Note",
+            "type": "NestedChoice",
+            "id": "proj-note-choice-001",
+            "choice": {
+              "id": "proj-note-template-001",
+              "name": "Create Project Note",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Note Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{DATE:YYYY-MM-DD-HH-mm}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:projectPath}}/Notes"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj-meeting-macro-001",
+      "name": "Project Meeting",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Project Meeting",
+        "id": "proj-meeting-macro-id",
+        "commands": [
+          {
+            "name": "getProjectPath",
+            "type": "UserScript",
+            "id": "proj-meeting-script-001",
+            "path": "System/Scripts/getProjectPath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Project Meeting",
+            "type": "NestedChoice",
+            "id": "proj-meeting-choice-001",
+            "choice": {
+              "id": "proj-meeting-template-001",
+              "name": "Create Project Meeting",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Meeting Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{DATE:YYYY-MM-DD-HH-mm}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:projectPath}}/Meetings"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "proj-task-macro-001",
+      "name": "Project Task",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Project Task",
+        "id": "proj-task-macro-id",
+        "commands": [
+          {
+            "name": "getProjectPath",
+            "type": "UserScript",
+            "id": "proj-task-script-001",
+            "path": "System/Scripts/getProjectPath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Project Task",
+            "type": "NestedChoice",
+            "id": "proj-task-choice-001",
+            "choice": {
+              "id": "proj-task-template-001",
+              "name": "Create Project Task",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Task Template.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{DATE:YYYY-MM-DD-HH-mm}}"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:projectPath}}/Tasks"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "person-template-001",
+      "name": "Person",
+      "type": "Template",
+      "command": true,
+      "templatePath": "System/Templates/Person Template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": ["Spaces/Default/People"],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "topic-template-001",
+      "name": "Topic",
+      "type": "Template",
+      "command": true,
+      "templatePath": "System/Templates/Topic Template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": ["Spaces/Default/Topics"],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "reference-template-001",
+      "name": "Reference",
+      "type": "Template",
+      "command": true,
+      "templatePath": "System/Templates/Reference Template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": ["Spaces/Default/References"],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "quote-template-001",
+      "name": "Quote",
+      "type": "Template",
+      "command": true,
+      "templatePath": "System/Templates/Quote Template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": ["Spaces/Default/Quotes"],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "default-note-template-001",
+      "name": "Default Note",
+      "type": "Template",
+      "command": true,
+      "templatePath": "System/Templates/Note Template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD-HH-mm}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": ["Spaces/Default/Notes"],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "space-topic-macro-001",
+      "name": "Space Topic",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space Topic",
+        "id": "space-topic-macro-id",
+        "commands": [
+          {
+            "name": "getSpacePath",
+            "type": "UserScript",
+            "id": "space-topic-script-001",
+            "path": "System/Scripts/getSpacePath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Space Topic",
+            "type": "NestedChoice",
+            "id": "space-topic-choice-001",
+            "choice": {
+              "id": "space-topic-template-001",
+              "name": "Create Space Topic",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Topic Template.md",
+              "fileNameFormat": {
+                "enabled": false,
+                "format": ""
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:spacePath}}/Topics"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "space-reference-macro-001",
+      "name": "Space Reference",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space Reference",
+        "id": "space-reference-macro-id",
+        "commands": [
+          {
+            "name": "getSpacePath",
+            "type": "UserScript",
+            "id": "space-reference-script-001",
+            "path": "System/Scripts/getSpacePath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Space Reference",
+            "type": "NestedChoice",
+            "id": "space-reference-choice-001",
+            "choice": {
+              "id": "space-reference-template-001",
+              "name": "Create Space Reference",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Reference Template.md",
+              "fileNameFormat": {
+                "enabled": false,
+                "format": ""
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:spacePath}}/References"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "space-quote-macro-001",
+      "name": "Space Quote",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space Quote",
+        "id": "space-quote-macro-id",
+        "commands": [
+          {
+            "name": "getSpacePath",
+            "type": "UserScript",
+            "id": "space-quote-script-001",
+            "path": "System/Scripts/getSpacePath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Space Quote",
+            "type": "NestedChoice",
+            "id": "space-quote-choice-001",
+            "choice": {
+              "id": "space-quote-template-001",
+              "name": "Create Space Quote",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Quote Template.md",
+              "fileNameFormat": {
+                "enabled": false,
+                "format": ""
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:spacePath}}/Quotes"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "space-person-macro-001",
+      "name": "Space Person",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Space Person",
+        "id": "space-person-macro-id",
+        "commands": [
+          {
+            "name": "getSpacePath",
+            "type": "UserScript",
+            "id": "space-person-script-001",
+            "path": "System/Scripts/getSpacePath.js",
+            "settings": {}
+          },
+          {
+            "name": "Create Space Person",
+            "type": "NestedChoice",
+            "id": "space-person-choice-001",
+            "choice": {
+              "id": "space-person-template-001",
+              "name": "Create Space Person",
+              "type": "Template",
+              "command": false,
+              "templatePath": "System/Templates/Person Template.md",
+              "fileNameFormat": {
+                "enabled": false,
+                "format": ""
+              },
+              "folder": {
+                "enabled": true,
+                "folders": ["{{VALUE:spacePath}}/People"],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "inputPrompt": "single-line",
+  "persistInputPromptDrafts": true,
+  "useSelectionAsCaptureValue": true,
+  "devMode": false,
+  "templateFolderPath": "System/Templates",
+  "announceUpdates": "all",
+  "version": "2.11.0",
+  "globalVariables": {},
+  "onePageInputEnabled": false,
+  "disableOnlineFeatures": true,
+  "enableRibbonIcon": false,
+  "showCaptureNotification": true,
+  "showInputCancellationNotification": false,
+  "enableTemplatePropertyTypes": true,
+  "dateAliases": {
+    "t": "today",
+    "tm": "tomorrow",
+    "yd": "yesterday",
+    "nw": "next week",
+    "nm": "next month",
+    "ny": "next year",
+    "lw": "last week",
+    "lm": "last month",
+    "ly": "last year"
+  },
+  "ai": {
+    "defaultModel": "Ask me",
+    "defaultSystemPrompt": "As an AI assistant within Obsidian, your primary goal is to help users manage their ideas and knowledge more effectively. Format your responses using Markdown syntax. Please use the [[Obsidian]] link format. You can write aliases for the links by writing [[Obsidian|the alias after the pipe symbol]]. To use mathematical notation, use LaTeX syntax. LaTeX syntax for larger equations should be on separate lines, surrounded with double dollar signs ($$). You can also inline math expressions by wrapping it in $ symbols. For example, use $$w_{ij}^{\text{new}}:=w_{ij}^{\text{current}}+etacdotdelta_jcdot x_{ij}$$ on a separate line, but you can write \"($eta$ = learning rate, $delta_j$ = error term, $x_{ij}$ = input)\" inline.",
+    "promptTemplatesFolderPath": "",
+    "showAssistant": true,
+    "providers": [
+      {
+        "name": "OpenAI",
+        "endpoint": "https://api.openai.com/v1",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "text-davinci-003",
+            "maxTokens": 4096
+          },
+          {
+            "name": "gpt-3.5-turbo",
+            "maxTokens": 4096
+          },
+          {
+            "name": "gpt-3.5-turbo-16k",
+            "maxTokens": 16384
+          },
+          {
+            "name": "gpt-3.5-turbo-1106",
+            "maxTokens": 16385
+          },
+          {
+            "name": "gpt-4",
+            "maxTokens": 8192
+          },
+          {
+            "name": "gpt-4-32k",
+            "maxTokens": 32768
+          },
+          {
+            "name": "gpt-4-1106-preview",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4-turbo",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o-mini",
+            "maxTokens": 128000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      },
+      {
+        "name": "Gemini",
+        "endpoint": "https://generativelanguage.googleapis.com",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gemini-1.5-pro",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash-8b",
+            "maxTokens": 1000000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      }
+    ]
+  },
+  "migrations": {
+    "migrateToMacroIDFromEmbeddedMacro": true,
+    "useQuickAddTemplateFolder": true,
+    "incrementFileNameSettingMoveToDefaultBehavior": true,
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
+    "setVersionAfterUpdateModalRelease": true,
+    "addDefaultAIProviders": true,
+    "removeMacroIndirection": true,
+    "migrateFileOpeningSettings": true,
+    "setProviderModelDiscoveryMode": true,
+    "backfillFileOpeningDefaults": true,
+    "migrateProviderApiKeysToSecretStorage": true
+  }
+}
