@@ -2,28 +2,7 @@
   "main": {
     "id": "49c1bbc19766f1fc",
     "type": "split",
-    "children": [
-      {
-        "id": "377a289931c56947",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "81bc121acc479c51",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spaces/Default/Notes/About PLATINUM QUARTZ.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "About PLATINUM QUARTZ"
-            }
-          }
-        ]
-      }
-    ],
+    "children": [],
     "direction": "vertical"
   },
   "left": {
@@ -102,66 +81,7 @@
       {
         "id": "e6c3160f2cf8415c",
         "type": "tabs",
-        "children": [
-          {
-            "id": "09a7d137ef5c3df1",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
-            }
-          },
-          {
-            "id": "d5b938a8520cc966",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Projects/Excel JS/Notes/Documentation/About Project.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for About Project"
-            }
-          },
-          {
-            "id": "5245e6bd16953765",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Projects/Excel JS/Notes/Documentation/About Project.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from About Project"
-            }
-          },
-          {
-            "id": "b00d09571a585a81",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Projects/Excel JS/Notes/Documentation/About Project.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of About Project"
-            }
-          }
-        ]
+        "children": []
       }
     ],
     "direction": "horizontal",
@@ -181,44 +101,6 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "81bc121acc479c51",
-  "lastOpenFiles": [
-    "Area/Home.md",
-    "Area/Notes.md",
-    "Area/Meetings.md",
-    "Spaces/Default/Notes/About PLATINUM QUARTZ.md",
-    "Area/Spaces.md",
-    "Spaces/Default/Default.md",
-    "System/Templates/Note Template.md",
-    "System/Templates/Space Template.md",
-    "System/Vault Structure.md",
-    "Spaces/Default/People/Owner.md",
-    "System/Copilot/Conversations/Hi@20260209_220441.md",
-    "Spaces/Default/People/Ivan.md",
-    "Area/People.md",
-    "Area/Tasks.md",
-    "Area/Resources.md",
-    "Area/Projects.md",
-    "Journal/2026/2026-02-06.md",
-    "Projects/Excel JS/Notes/Documentation/About Project.md",
-    "System/Copilot/Conversations/@composer_refine_this_active_note_using_AI_Note_Refinement@20260209_111148.md",
-    "Projects/Excel JS/Notes/Features/ROW - GET.md",
-    "Projects/Excel JS/Notes/Documentation/Untitled.md",
-    "Projects/Excel JS/Notes/Documentation",
-    "Projects/Excel JS/Notes/Features/CELL - RESOLVE.md",
-    "Projects/Excel JS/Notes/Developer Journey.md",
-    "System/Copilot/Conversations/@composer_take_this_activeNote_and_please_make_it_clean_fromthese@20260209_133122.md",
-    "Projects/Excel JS/Excel JS.md",
-    "Projects/Excel JS/Notes/Push Architecture Overview.md",
-    "System/Scripts/getJournalPath.js",
-    "Projects/Excel JS/Notes/Features",
-    "Projects/Infrastructure CDN/Notes",
-    "Projects/Infrastructure CDN",
-    "Projects/Excel JS/Notes/Push Integration",
-    "Spaces/TimeManagement/Notes",
-    "Spaces/TimeManagement",
-    "Uploads/Pasted image 20260126131352.png",
-    "Projects/Excel JS/Notes",
-    "Projects/WebStation/Notes/Features/Workers Improvement"
-  ]
+  "active": "",
+  "lastOpenFiles": []
 }
