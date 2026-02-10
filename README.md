@@ -27,3 +27,19 @@ git pull upstream main
 ```
 
 Your local repository is now connected to the upstream source and up to date.
+
+5. To resolve the conflict, follow these steps.
+
+```sh
+git stash push -- .obsidian/workspace.json
+# stashes your local workspace.json so the index becomes clean
+
+git pull upstream main
+# pulls and merges upstream changes
+
+git update-index --skip-worktree .obsidian/workspace.json
+# tells Git to ignore this file going forward (local only)
+
+git stash pop
+# restores your local workspace.json (Git will now ignore it)
+```
