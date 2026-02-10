@@ -107,10 +107,6 @@ git stash push -- .obsidian/workspace-mobile.json
 git pull upstream main
 # pulls and merges upstream changes
 
-git update-index --skip-worktree .obsidian/workspace.json
-git update-index --skip-worktree .obsidian/workspace-mobile.json
-# tells Git to ignore these files going forward (local only)
-
 git stash pop
 # restores your local workspace.json (Git will now ignore it)
 ```
