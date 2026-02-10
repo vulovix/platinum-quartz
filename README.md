@@ -1,6 +1,6 @@
-After Cloning the Repository
+#### README.md
 
-Follow these steps to detach the original remote and link the upstream repository.
+After Cloning the Repository, follow these steps to detach the original remote and link the upstream repository.
 
 1. Remove the original `origin` remote
 

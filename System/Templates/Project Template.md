@@ -6,7 +6,6 @@ manager: "[[Owner]]"
 tags:
   - project
 ---
-
 #### Project: <% tp.file.title %>
 
 #### Overview

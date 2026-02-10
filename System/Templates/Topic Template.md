@@ -4,7 +4,6 @@ space: "" # Link to parent Space
 tags:
   - topic
 ---
-
 #### Topic: <% tp.file.title %>
 
 #### Overview

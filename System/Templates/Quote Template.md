@@ -8,7 +8,6 @@ space: "" # Link to parent Space
 tags:
   - quote
 ---
-
 #### Quote: <% tp.file.title %>
 
 > <% tp.file.title %>

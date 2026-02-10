@@ -8,7 +8,6 @@ project: "" # Link to Project note, e.g., "[[Website Redesign]]"
 tags:
   - task
 ---
-
 #### Task: <% tp.file.title %>
 
 #### Description

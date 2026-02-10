@@ -6,7 +6,6 @@ email: ""
 tags:
   - person
 ---
-
 #### <% tp.file.title %>
 
 #### Notes

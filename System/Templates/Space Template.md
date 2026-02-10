@@ -5,7 +5,6 @@ description: ""
 tags:
   - space
 ---
-
 #### Space: <% tp.file.title %>
 
 #### Quick Actions

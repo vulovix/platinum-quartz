@@ -7,7 +7,6 @@ attendees: []
 tags:
   - meeting
 ---
-
 #### Meeting: <% tp.file.title %>
 
 #### Agenda

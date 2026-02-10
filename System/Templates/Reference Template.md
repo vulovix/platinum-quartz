@@ -6,7 +6,6 @@ space: "" # Link to parent Space
 tags:
   - reference
 ---
-
 #### Reference: <% tp.file.title %>
 
 #### Summary
